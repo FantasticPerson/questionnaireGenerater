@@ -21,7 +21,12 @@ class App extends Component {
         return (
             <div id="react-app">
                 {this.renderOverLay()}
-                {this.props.children}
+                <div className="header">
+                    <span className="header-title">问卷生成器</span>
+                </div>
+                <div className="child-container">
+                    {this.props.children}
+                </div>
             </div>
         )
     }

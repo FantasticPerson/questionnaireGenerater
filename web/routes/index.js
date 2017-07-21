@@ -4,6 +4,7 @@
 import indexApp from '../containers/index'
 import demoPage from './demoPage'
 import formPage from './formPage'
+import list from './list'
 
 const index = {
     path:'/',
@@ -13,7 +14,8 @@ const index = {
     },
     childRoutes:[
         demoPage,
-        formPage
+        formPage,
+        list
     ]
 };
 

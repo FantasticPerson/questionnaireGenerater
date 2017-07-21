@@ -7,6 +7,4 @@ export default class ToolBar extends Component{
     constructor(){
         super();
     }
-
-
 }

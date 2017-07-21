@@ -4,14 +4,24 @@
 @import "./components/BaseModal.styl"
 @import "./components/LoadingModal.styl"
 
+@import "containers/index.styl"
 @import "containers/demoPage.styl"
+@import "containers/list.styl"
 
-body
-  background-color #ffffff
+body {
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #EEEFF1!important;
+}
+body, input, button, select, textarea, th, td {
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+*
   margin 0
-
-div
-  font-size 12px
+  padding 0
 
 table
   border-spacing 0
