@@ -31,7 +31,9 @@ export default class Item extends Component{
                 <p className="list-item-content-title">示例问卷</p>
                 <p className="list-item-content-time">16小时前</p>
                 <div className="list-content-btn-container">
-                    <div onclick={}>编辑</div>
+                    <div onClick={
+                        (e)=>{console.log('123');}
+                    }>编辑</div>
                     <div>预览</div>
                 </div>
             </div>
