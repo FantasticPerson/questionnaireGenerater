@@ -18,14 +18,18 @@ let compiler = webpack(config);
 let app = express();
 app.use(devMiddleware(compiler,{
     contentBase: DEV_CONST.OUTPUT_WEB_DIR,
-    publicPath: config.output.publicPath,
+    publicPath: 'http://localhost:3001/',
+    headers:{
+        'Access-Control-Allow-Origin': '*'
+    },
+    // publicPath: config.output.publicPath,
     headers: {
         'Access-Control-Allow-Origin': '*',
         "X-Custom-Header": "yes"
     },
     proxy: {//解决跨域问题
         '*': {
-            target: 'http://61.155.85.77:10006',
+            target: 'http://127.0.0.1:3998',
             secure: false,
         }
     },
@@ -35,7 +39,9 @@ app.use(devMiddleware(compiler,{
     lazy: false,
     quiet: false,
     noInfo: false,
-    index: 'main.html'
+    index: 'main.html',
+    'history-api-fallback':true,
+    open:true
 }));
 
 app.use(hotMiddleware(compiler));

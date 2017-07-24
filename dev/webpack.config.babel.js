@@ -55,9 +55,12 @@ function entryConfig(options) {
 
     if (DEV_CONST.APP_DEBUG) {
         let devServerConfig = [
-            'react-hot-loader/patch',
+            // 'react-hot-loader/patch',
             `webpack-hot-middleware/client?path=http://127.0.0.1:${DEV_CONST.DEV_PORT}/__webpack_hmr`,
-            `webpack/hot/only-dev-server`
+            `webpack/hot/only-dev-server`,
+            // `webpack-dev-server/?path=http://127.0.0.1:${DEV_CONST.DEV_PORT}/__webpack_hmr`,
+            'babel-polyfill',
+            'react-hot-loader/patch'
         ];
         mainConfig = [
             ...devServerConfig,

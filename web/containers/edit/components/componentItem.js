@@ -62,7 +62,9 @@ export default class ComponentItem extends Component{
             name="分页";
         }
         return (
-            <div className="componentItem-container">
+            <div className="componentItem-container" draggable onDragStart={e=>(function(e,text){
+                    e.dataTransfer.setData('text/plain',text);
+                })(e,iconClass)}>
                 <div className={iconClass}/>
                 {name}
             </div>

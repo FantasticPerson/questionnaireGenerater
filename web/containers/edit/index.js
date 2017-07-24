@@ -3,8 +3,10 @@
  */
 import React,{Component,PropTypes} from 'react'
 import SlideComponents from './components/slideComponents'
+import PaperComponent from './components/paparComponent'
+import {connect} from 'react-redux';
 
-export default class Eidt extends Component{
+class Edit extends Component{
     constructor(){
         super()
     }
@@ -12,8 +14,16 @@ export default class Eidt extends Component{
     render(){
         return (
             <div className="edit-container">
-                <SlideComponents/>
+                <SlideComponents dispatch={this.props.dispatch}/>
+                <PaperComponent dispatch={this.props.dispatch}/>
             </div>
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+    }
+}
+
+export default connect(mapStateToProps)(Edit);

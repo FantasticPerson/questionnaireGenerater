@@ -11,7 +11,7 @@ export default class SlideComponents extends Component{
 
     render(){
         return (
-            <div>
+            <div className="slideComponent-container">
                 {this.renderContents()}
             </div>
         )
