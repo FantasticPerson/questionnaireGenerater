@@ -8,7 +8,7 @@ export default class PaperItemHead extends Component{
         super();
         this.state={
             title:"示例问卷",
-            describe:"欢迎使用问卷网！这是一份示例问卷。1234455667788",
+            describe:"欢迎使用问卷网！这是一份示例问卷。",
             renderTitleP:true,
             renderDescribeP:true
         };
@@ -30,26 +30,23 @@ export default class PaperItemHead extends Component{
         const {renderTitleP} = this.state;
         if(renderTitleP){
             return (
-                <p className="paperItemHead-title" onClick={(e)=>{
+                <div className="paperItemHead-title" onClick={(e)=>{
                     this.setState({renderTitleP:false});
-                    }}>{this.state.title}</p>
+                    }}>{this.state.title}</div>
             )
         }
         return (
-            <div style={{padding: "2px 57px"}}>
-                <input style={{
-                    padding: "12px 10px",
-                    paddingRight: "50px",
-                    background: "#FDF9CD",
-                    width: "700px",
-                    border: "1px solid #1C658B",
-                    fontSize:"18px",
-                    lineHeight:"18px"
-                }} type="text" autoFocus className="paperItemHead-title" onClick={(e)=>{
-
+            <div className="paperItemHead-title" style={{
+                    backgroundColor:"#FDF9CD",
+                    border:"1px solid #1C658B",
+                    margin:'0px',
+                    outline:'none',
+                    padding:'16px 57px',
+                    marginTop:'-1px',
+                    marginLeft:'-1px'
                 }} onBlur={(e)=>{
-                    this.setState({title:e.currentTarget.value,renderTitleP:true})
-                }} defaultValue={this.state.title}/>
+                    this.setState({title:e.currentTarget.innerText,renderTitleP:true})
+                }} autoFocus contentEditable="true">{this.state.title}
             </div>
         )
     }
@@ -71,7 +68,7 @@ export default class PaperItemHead extends Component{
                     lineHeight:"18px",
                     verticalAlign:"top",
                     textAlign:'left'
-                }} type="text"  className="paperItemHead-title" onClick={(e)=>{
+                }} type="text"  autoFocus className="paperItemHead-title" onClick={(e)=>{
 
                 }} onBlur={(e)=>{
                     this.setState({describe:e.currentTarget.value,renderDescribeP:true})

@@ -21,6 +21,13 @@
   margin: -3px 5px 0 0;
   vertical-align middle
 
+.component-item-opt-hover
+  display inline-block
+  width: 20px
+  height 20px
+  background url(./icon/wjsj_toolico.png) 0 0 no-repeat
+  vertical-align middle
+
 .user-list-add
   background-position -563px -594px
 
@@ -214,4 +221,56 @@
 .componentItem15{
   @extends .component-item-opt
   background-position: 0 -340px;
+}
+
+.componentMoveUp{
+  @extends .component-item-opt
+  background-position: -23px -513px
+  margin 5px
+  cursor: pointer
+}
+
+.componentMoveDown{
+  @extends .component-item-opt
+  background-position: -23px -538px
+  margin 5px
+  cursor: pointer
+}
+
+.componentCopy{
+  @extends .component-item-opt
+  background-position: -19px -360px
+  margin 5px
+  cursor: pointer
+}
+
+.componentDelete{
+  @extends .component-item-opt
+  background-position: -20px -180px
+  margin 5px
+  cursor: pointer
+}
+
+.componentMoveUp:hover{
+  @extends .component-item-opt-hover
+  background-position: -23px -513px
+  margin 5px
+}
+
+.componentMoveDown:hover{
+  @extends .component-item-opt-hover
+  background-position: -23px -538px
+  margin 5px
+}
+
+.componentCopy:hover{
+  @extends .component-item-opt-hover
+  background-position: -19px -360px
+  margin 5px
+}
+
+.componentDelete:hover{
+  @extends .component-item-opt-hover
+  background-position: -20px -180px
+  margin 5px
 }
