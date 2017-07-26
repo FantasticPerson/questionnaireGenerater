@@ -11,9 +11,13 @@ class List extends Component{
     }
 
     render(){
+        const {questions,dispatch} = this.props;
+        var items = questions.map((item,index)=>{
+            return <Item data={item} key={index} dispatch={dispatch}/>
+        })
         return(
             <div className="list-container">
-                <Item dispatch={this.props.dispatch}/>
+                {items}
             </div>
         )
     }
@@ -21,6 +25,7 @@ class List extends Component{
 
 function mapStateToProps(state) {
     return {
+        questions:state.questionnare.question
     }
 }
 

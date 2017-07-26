@@ -13,18 +13,31 @@ export default class PaperComponent extends Component{
     }
 
     render(){
+        const {data,dispatch} = this.props;
         return (
             <div className="paperComponent-container" onDragOver={(e)=>{
                 e.preventDefault();
                 }} onDrop={e=>{
                     this.onItemDrop(e.dataTransfer.getData("text/plain"));
                 }}>
-                <PaperItemHead dispatch={this.props.dispatch}/>
-                <Describe dispatch={this.props.dispatch}/>
-                <Choose dispatch={this.props.dispatch}/>
-                {this.renderComponentItem()}
+                <PaperItemHead data={data.title} dispatch={dispatch}/>
+                {this.renderComponents()}
             </div>
         )
+    }
+
+    renderComponents(){
+        let itemsData = this.props.data.questions;
+        let items = itemsData.map((item,index)=>{
+            if(item.type == "1"){
+                return <Describe data={item.data} dispatch={this.props.dispatch}/>
+            } else if(item.type == "2"){
+                return <Choose isCheck={true} data={item.data} dispatch={this.props.dispatch}/>
+            } else if(item.type == "3"){
+                return <Choose isCheck={false} data={item.data} dispatch={this.props.dispatch}/>
+            }
+        })
+        return items;
     }
 
     renderComponentItem(){

@@ -1,4 +1,5 @@
 import React,{Component,PropTypes} from 'react'
+import EditableDiv from '../../../../components/editableDiv'
 
 export default class RadioItem extends Component{
     constructor(){
@@ -6,6 +7,10 @@ export default class RadioItem extends Component{
     }
 
     render(){
+        let style = {
+            display:"inline-block",
+            margin:'0 5px'
+        }
         const {value} = this.props;
         return (
             <li style={{
@@ -17,7 +22,7 @@ export default class RadioItem extends Component{
                 <label>
                     <input type="radio" value="value" name="radio" style={{
                         margin:'0 5px'
-                    }}/><span>{value || "默认文本"}</span>
+                    }}/><span><EditableDiv style={style} value={value || "默认文本"}/></span>
                 </label>
             </li> 
         )

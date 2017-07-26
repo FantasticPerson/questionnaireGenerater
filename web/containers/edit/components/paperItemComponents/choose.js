@@ -2,14 +2,21 @@ import React,{Component,PropTypes} from 'react'
 import CheckItem from './checkItem'
 import RadioItem from './radioItem'
 import EditTools from '../editTools'
+import EditableDiv from '../../../../components/editableDiv'
 
 export default class ChooseItem extends Component{
     constructor(){
         super();
-        this.state={titleP:"默认文本",showTitle:true};
     }
 
     render(){
+        const {data} = this.props;
+        var style = {
+            padding: "5px 0 5px 0",
+            lineHeight: "30px",
+            position: "relative",
+            width:'799px'
+        }
         return (
             <div style={{
                 width: '860px',
@@ -29,7 +36,7 @@ export default class ChooseItem extends Component{
                     padding: '5px',
                     borderLeft: '1px solid #CCC'
                 }}>
-                    {this.renderTitle()}
+                    <EditableDiv value={data.title} style={style}/>
                     <ul style={{
                         fontSize: "14px",
                         display: "inline-block",
@@ -37,43 +44,17 @@ export default class ChooseItem extends Component{
                         paddingLeft: "0",
                         listStyleType: "none"
                     }}>
-                        {this.renderItem()}
-                        {this.renderItem()}
-                        {this.renderItem()}
-                        {this.renderItem()}
-                        {this.renderItem()}
+                        {this.renderItems()}
                     </ul>
                 </div>
             </div>
         )
     }
 
-    renderEditTools(){
-        return (
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        )
-    }
-
-    renderItem(){
-        const {isCheck} = this.props;
-        return isCheck ? <CheckItem/> : <RadioItem/>
-    }
-
-    renderTitle(){
-        const {showTitle,titleP} = this.state;
-        return showTitle ? (
-            <p style={{
-                padding: "5px 0 5px 0",
-                lineHeight: "30px",
-                position: "relative"
-            }}>{titleP}</p>
-        ) : (
-            <input type="text" defaultValue={titleP}/>
-        )
+    renderItems(){
+        const {data,isCheck} = this.props;
+        return data.options.map((item,index)=>{
+            return isCheck ? <CheckItem value={item} key={index}/> : <RadioItem value={item} key={index}/>
+        })
     }
 }

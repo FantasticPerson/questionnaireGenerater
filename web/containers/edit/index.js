@@ -12,10 +12,14 @@ class Edit extends Component{
     }
 
     render(){
+        const {cid,questions,dispatch} = this.props;
+        let questionData = questions.find((item)=>{
+            return item.id == cid;
+        })
         return (
             <div className="edit-container">
                 <SlideComponents dispatch={this.props.dispatch}/>
-                <PaperComponent dispatch={this.props.dispatch}/>
+                <PaperComponent dispatch={dispatch} data={questionData}/>
             </div>
         )
     }
@@ -23,6 +27,8 @@ class Edit extends Component{
 
 function mapStateToProps(state) {
     return {
+        questions:state.questionnare.question,
+        cid:state.questionnare.cid
     }
 }
 

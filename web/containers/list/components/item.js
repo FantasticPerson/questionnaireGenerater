@@ -3,6 +3,7 @@
  */
 import React,{Component,PropTypes} from 'react'
 import {push} from 'react-router-redux';
+import {updateCid} from '../../../actions/question'
 
 export default class Item extends Component{
     constructor(){
@@ -27,18 +28,20 @@ export default class Item extends Component{
         )
     }
     renderContent(){
+        const {data,dispatch} = this.props;
         return (
             <div className="list-item-content-container">
                 <p className="list-item-content-title" onClick={
                     (e)=>{
 
                     }
-                }>示例问卷</p>
+                }>{data.title.name}</p>
                 <p className="list-item-content-time">16小时前</p>
                 <div className="list-content-btn-container">
                     <div onClick={
                         (e)=>{
-                            this.props.dispatch(push('edit'))
+                            dispatch(updateCid(data.id));
+                            dispatch(push('edit'));                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
                         }
                     }>编辑</div>
                     <div>预览</div>
