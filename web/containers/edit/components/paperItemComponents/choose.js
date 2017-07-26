@@ -53,7 +53,7 @@ export default class ChooseItem extends Component{
 
     renderItems(){
         const {data,isCheck} = this.props;
-        return data.options.map((item,index)=>{
+        return data.data.options.map((item,index)=>{
             return isCheck ? <CheckItem value={item} key={index}/> : <RadioItem value={item} key={index}/>
         })
     }
