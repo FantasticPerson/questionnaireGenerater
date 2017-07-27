@@ -88,29 +88,49 @@ export function copyQues(qid){
 
 export function delQues(qid){
     return (dispatch,getState)=>{
-        let questions = getState().questionnare.question;
-        let cid = getState().questionnare.cid;
-        let item = questions.find(function(item){
-            return item.id == cid;
-        });
-        if(item){
-            let questionArr = item.questions;
-            let qItem = questionArr.find(function(item){return item.id == qid});
-            if(qItem){
-                let i = questionArr.length;
-                let index = qid+1;
-                while(index <= i){
-                    let tItem = questionArr.find(function(item){return item.id == index});
-                    if(tItem){
-                        tItem.id = tItem.id -1;
-                    }
-                    index++;
+        let questions = getQuestions(getState);
+        let item = getQesItem(getState,questions);
+        if(!item){
+            return;
+        } 
+        let questionArr = item.questions;
+        let qItem = questionArr.find(function(item){return item.id == qid});
+        if(qItem){
+            let i = questionArr.length;
+            let index = qid+1;
+            while(index <= i){
+                let tItem = questionArr.find(function(item){return item.id == index});
+                if                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        (tItem){
+                    tItem.id = tItem.id -1;
                 }
-                questionArr.splice(qid-1,1);
-                dispatch(actionHelper.createPayloadAction(ActionTypes.update_question_nare,cloneObj(questions)));
+                index++;
             }
+            questionArr.splice(qid-1,1);
+            dispatch(actionHelper.createPayloadAction(ActionTypes.update_question_nare,cloneObj(questions)));
         }
     }
+}
+
+export function updateQItemData(qid,data){
+    return (dispatch,getState)=>{
+        let questions = getQuestions(getState);
+        let quesItem = getQesItem(getState,questions); 
+        let item = quesItem.questions;
+        let qItem = item.find(function(item1){return item1.id == qid});
+        qItem.data = data;
+        dispatch(actionHelper.createPayloadAction(ActionTypes.update_question_nare,cloneObj(questions)));
+    }
+}
+
+function getQesItem(getState,questions){
+    let cid = getState().questionnare.cid;
+    return questions.find(function(item){
+        return item.id == cid;
+    });
+}
+
+function getQuestions(getState){
+    return getState().questionnare.question;
 }
 
 
