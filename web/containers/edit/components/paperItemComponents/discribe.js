@@ -1,5 +1,6 @@
 import React,{Component,PropTypes} from 'react'
 import EditableDiv from '../../../../components/editableDiv'
+import EditTools from '../editTools'
 
 export default class Describe extends Component{
     constructor(){
@@ -25,7 +26,9 @@ export default class Describe extends Component{
                     borderRight: '1px solid #eee',
                     height: '152px',
                     display: 'inline-block'
-                }}></div>
+                }}>
+                    <EditTools dispatch={this.props.dispatch} ref="editTool"/>
+                </div>
                 <div style={{
                     display: 'inline-block',
                     verticalAlign: 'top'
@@ -41,5 +44,11 @@ export default class Describe extends Component{
                 </div>
             </div>
         );
+    }
+
+    componentDidMount(){
+        const {id} = this.props;
+        const {editTool} = this.refs;
+        editTool.setQid(id);
     }
 }

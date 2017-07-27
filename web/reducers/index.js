@@ -14,7 +14,7 @@ export const rootReducer = nestCombineReducers({
     },
     questionnare:{
         question:handleActionsReducor(MockData.MockQuestions,question.questionnare),
-        cid:handleActionsReducor(null,question.questionCid)
+        cid:handleActionsReducor(1,question.questionCid)
     }
 });
 

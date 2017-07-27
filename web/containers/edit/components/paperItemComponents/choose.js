@@ -29,7 +29,7 @@ export default class ChooseItem extends Component{
                     display: 'inline-block',
                     verticalAlign: 'top'
                 }}>
-                    <EditTools/>
+                    <EditTools ref="editTool" dispatch={this.props.dispatch}/>
                 </div>
                 <div style={{
                     display: 'inline-block',
@@ -51,9 +51,15 @@ export default class ChooseItem extends Component{
         )
     }
 
+    componentDidMount(){
+        const {editTool} = this.refs;
+        const {id} = this.props;
+        editTool.setQid(id);
+    }
+
     renderItems(){
         const {data,isCheck} = this.props;
-        return data.data.options.map((item,index)=>{
+        return data.options.map((item,index)=>{
             return isCheck ? <CheckItem value={item} key={index}/> : <RadioItem value={item} key={index}/>
         })
     }

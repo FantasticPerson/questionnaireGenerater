@@ -8,6 +8,7 @@ export const MockQuestions = [
         questions:[
             {
                 type:'1',
+                id:1,
                 data:{
                     title:'描述说明水电费',
                     options:[],
@@ -16,6 +17,7 @@ export const MockQuestions = [
             },
             {
                 type:'2',
+                id:2,
                 data:{
                     title:'默认文本',
                     options:[
@@ -29,6 +31,7 @@ export const MockQuestions = [
             },
             {
                 type:'3',
+                id:3,
                 data:{
                     title:'默认文本',
                     options:[
@@ -50,6 +53,7 @@ export const MockQuestions = [
         questions:[
             {
                 type:'1',
+                id:1,
                 data:{
                     title:'描述说明水电费',
                     options:[],
@@ -58,6 +62,7 @@ export const MockQuestions = [
             },
             {
                 type:'2',
+                id:2,
                 data:{
                     title:'默认文本',
                     options:[
@@ -71,6 +76,7 @@ export const MockQuestions = [
             },
             {
                 type:'3',
+                id:3,
                 data:{
                     title:'默认文本',
                     options:[
@@ -92,6 +98,7 @@ export const MockQuestions = [
         questions:[
             {
                 type:'1',
+                id:1,
                 data:{
                     title:'描述说明水电费',
                     options:[],
@@ -100,6 +107,7 @@ export const MockQuestions = [
             },
             {
                 type:'2',
+                id:2,
                 data:{
                     title:'默认文本',
                     options:[
@@ -113,6 +121,7 @@ export const MockQuestions = [
             },
             {
                 type:'3',
+                id:3,
                 data:{
                     title:'默认文本',
                     options:[
@@ -134,6 +143,7 @@ export const MockQuestions = [
         questions:[
             {
                 type:'1',
+                id:1,
                 data:{
                     title:'描述说明水电费',
                     options:[],
@@ -142,6 +152,7 @@ export const MockQuestions = [
             },
             {
                 type:'2',
+                id:2,
                 data:{
                     title:'默认文本',
                     options:[
@@ -155,6 +166,7 @@ export const MockQuestions = [
             },
             {
                 type:'3',
+                id:3,
                 data:{
                     title:'默认文本',
                     options:[
@@ -176,6 +188,7 @@ export const MockQuestions = [
         questions:[
             {
                 type:'1',
+                id:1,
                 data:{
                     title:'描述说明水电费',
                     options:[],
@@ -184,6 +197,7 @@ export const MockQuestions = [
             },
             {
                 type:'2',
+                id:2,
                 data:{
                     title:'默认文本',
                     options:[
@@ -197,6 +211,7 @@ export const MockQuestions = [
             },
             {
                 type:'3',
+                id:3,
                 data:{
                     title:'默认文本',
                     options:[
@@ -218,6 +233,7 @@ export const MockQuestions = [
         questions:[
             {
                 type:'1',
+                id:1,
                 data:{
                     title:'描述说明水电费',
                     options:[],
@@ -226,6 +242,7 @@ export const MockQuestions = [
             },
             {
                 type:'2',
+                id:2,
                 data:{
                     title:'默认文本',
                     options:[
@@ -239,6 +256,7 @@ export const MockQuestions = [
             },
             {
                 type:'3',
+                id:3,
                 data:{
                     title:'默认文本',
                     options:[
@@ -260,6 +278,7 @@ export const MockQuestions = [
         questions:[
             {
                 type:'1',
+                id:1,
                 data:{
                     title:'描述说明水电费',
                     options:[],
@@ -268,6 +287,7 @@ export const MockQuestions = [
             },
             {
                 type:'2',
+                id:2,
                 data:{
                     title:'默认文本',
                     options:[
@@ -281,6 +301,7 @@ export const MockQuestions = [
             },
             {
                 type:'3',
+                id:3,
                 data:{
                     title:'默认文本',
                     options:[
@@ -302,6 +323,7 @@ export const MockQuestions = [
         questions:[
             {
                 type:'1',
+                id:1,
                 data:{
                     title:'描述说明水电费',
                     options:[],
@@ -310,6 +332,7 @@ export const MockQuestions = [
             },
             {
                 type:'2',
+                id:2,
                 data:{
                     title:'默认文本',
                     options:[
@@ -323,6 +346,7 @@ export const MockQuestions = [
             },
             {
                 type:'3',
+                id:3,
                 data:{
                     title:'默认文本',
                     options:[

@@ -12,7 +12,7 @@ class List extends Component{
 
     render(){
         const {questions,dispatch} = this.props;
-        var items = questions.map((item,index)=>{
+        let items = questions.map((item,index)=>{
             return <Item data={item} key={index} dispatch={dispatch}/>
         })
         return(

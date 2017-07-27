@@ -19,7 +19,7 @@ class Edit extends Component{
         return (
             <div className="edit-container">
                 <SlideComponents dispatch={this.props.dispatch}/>
-                <PaperComponent dispatch={dispatch} data={questionData}/>
+                <PaperComponent dispatch={dispatch} data={questionData} cid={cid}/>
             </div>
         )
     }

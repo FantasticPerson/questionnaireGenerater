@@ -27,14 +27,18 @@ export default class PaperComponent extends Component{
     }
 
     renderComponents(){
+        const {cid} = this.props;
         let itemsData = this.props.data.questions;
+        itemsData = itemsData.sort(function(item1,item2){
+            return item1.id - item2.id;
+        });
         let items = itemsData.map((item,index)=>{
             if(item.type == "1"){
-                return <Describe data={item.data} dispatch={this.props.dispatch}/>
+                return <Describe data={item.data} id={item.id} cid={cid} key={index} dispatch={this.props.dispatch}/>
             } else if(item.type == "2"){
-                return <Choose isCheck={true} data={item.data} dispatch={this.props.dispatch}/>
+                return <Choose isCheck={true} data={item.data} id={item.id} cid={cid} key={index} dispatch={this.props.dispatch}/>
             } else if(item.type == "3"){
-                return <Choose isCheck={false} data={item.data} dispatch={this.props.dispatch}/>
+                return <Choose isCheck={false} data={item.data} id={item.id} cid={cid} key={index} dispatch={this.props.dispatch}/>
             }
         })
         return items;
