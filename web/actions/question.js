@@ -20,7 +20,7 @@ export function updateQuestion(data){
 
 export function updateCid(id){
     return (dispatch)=>{
-        dispatch(actionHelper.createErrorAction(ActionTypes.update_question_cid,id));
+        dispatch(actionHelper.createPayloadAction(ActionTypes.update_question_cid,id));
     }
 }
 
