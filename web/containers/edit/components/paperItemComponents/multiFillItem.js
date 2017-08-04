@@ -33,7 +33,7 @@ export default class MultiFillItem extends Component{
                     <EditableDiv style={style} value={item}/>
                     <textarea style={{
                         margin: '4px',
-                        resize: 'none',
+                        resize: 'none', 
                         minHeight: '21px',
                         border: '1px solid #dbdbdb',
                         marginLeft: '5px',
