@@ -14,7 +14,10 @@ const index = {
     childRoutes:[
         list,
         edit
-    ]
+    ],
+    indexRoute: {
+        onEnter: (nextState, replace)=>replace('/list')
+    }
 };
 
 export default index;
