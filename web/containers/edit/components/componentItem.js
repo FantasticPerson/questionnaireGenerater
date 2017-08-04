@@ -14,6 +14,7 @@ export default class ComponentItem extends Component{
     render(){
         let type = String(this.props.type);
         let iconClass = '';
+        let display="block";
         let name = '';
         if(type === this.types[0]){
             iconClass = "componentItem1";
@@ -24,6 +25,7 @@ export default class ComponentItem extends Component{
         }else if(type === this.types[2]){
             iconClass = "componentItem3";
             name="图片选择器";
+            display="none"
         }else if(type === this.types[3]){
             iconClass = "componentItem4";
             name="填空题";
@@ -33,36 +35,45 @@ export default class ComponentItem extends Component{
         }else if(type === this.types[5]){
             iconClass = "componentItem6";
             name="排序题";
+            display="none"
         }else if(type === this.types[6]){
             iconClass = "componentItem7";
             name="打分题";
+            display="none"
         }else if(type === this.types[7]){
             iconClass = "componentItem8";
             name="文字投票题";
+            display="none"
         }else if(type === this.types[8]){
             iconClass = "componentItem9";
             name="图片投票题";
+            display="none"
         }else if(type === this.types[9]){
             iconClass = "componentItem10";
             name="矩阵选择题";
+            display="none"
         }else if(type === this.types[10]){
             iconClass = "componentItem11";
             name="描述说明";
         }else if(type === this.types[11]){
             iconClass = "componentItem12";
             name="上传题题";
+            display="none"
         }else if(type === this.types[12]){
             iconClass = "componentItem13";
             name="NPS题";
+            display="none"
         }else if(type === this.types[13]){
             iconClass = "componentItem14";
             name="地址位置题";
+            display="none"
         }else if(type === this.types[14]){
             iconClass = "componentItem15";
             name="分页";
+            display="none"
         }
         return (
-            <div className="componentItem-container" draggable onDragStart={e=>(function(e,text){
+            <div style={{display:display}} className="componentItem-container" draggable onDragStart={e=>(function(e,text){
                     e.dataTransfer.setData('text/plain',text);
                 })(e,iconClass)}>
                 <div className={iconClass}/>

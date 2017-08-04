@@ -6,6 +6,7 @@ import PaperItemHead from './paperItemComponents/paperItemHead'
 import Describe from './paperItemComponents/discribe'
 import Choose from './paperItemComponents/choose'
 import FillItem from './paperItemComponents/fillItem'
+import MultiFillItem from './paperItemComponents/multiFillItem'
 import {addNewQuesItem} from '../../../actions/question'
 
 export default class PaperComponent extends Component{
@@ -43,6 +44,8 @@ export default class PaperComponent extends Component{
                 return <Choose isCheck={false} data={item.data} id={item.id} cid={cid} key={index} dispatch={this.props.dispatch}/>
             } else if(item.type == "4"){
                 return <FillItem data={item.data} id={item.id} cid={cid} key={index} dispatch={this.props.dispatch}/>
+            } else if(item.type == "5"){
+                return <MultiFillItem data={item.data} id={item.id} cid={cid} key={index} dispatch = {this.props.dispatch}/>
             }
         })
         return items;

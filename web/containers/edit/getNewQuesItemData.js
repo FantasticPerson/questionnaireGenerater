@@ -39,6 +39,20 @@ export default function getQuesItemData(type){
                 questions:[]
             }
         }
+    } else if(type == "componentItem5"){
+        return {
+            type:'5',
+            id:1,
+            data:{
+                title:'多项填空题',
+                options:[
+                    "填空项一",
+                    "填空项二",
+                    "填空项三"
+                ],
+                questions:[]
+            }
+        }
     } else if(type == 'componentItem11'){
         return {
             type:'1',

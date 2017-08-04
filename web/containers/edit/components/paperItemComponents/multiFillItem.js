@@ -1,8 +1,12 @@
 import React,{Component,PropTypes} from 'react'
+import EditableDiv from '../../../../components/editableDiv'
+import EditTools from '../editTools'
+import {updateQItemData} from '../../../../actions/question'
 
 export default class MultiFillItem extends Component{
     constructor(){
         super()
+        this.state = {showAddBtn:false}
     };
 
     componentDidMount(){
@@ -14,6 +18,7 @@ export default class MultiFillItem extends Component{
     render(){
         const {data} = this.props;
         const {options} = data;
+        const {showAddBtn} = this.state;
         var style = {
             display: 'block',
             padding: '5px',
@@ -21,10 +26,11 @@ export default class MultiFillItem extends Component{
             position: 'relative',
             width: '799px'
         }
+        
         let optionArr = options.map((item,index)=>{
             return (
-                <div key="index">
-                    <EditableDiv style={style} value={data.title}/>
+                <div key={index}>
+                    <EditableDiv style={style} value={item}/>
                     <textarea style={{
                         margin: '4px',
                         resize: 'none',
@@ -48,19 +54,35 @@ export default class MultiFillItem extends Component{
             }}>
                 <div style={{
                     width: '50px',
-                    borderRight: '1px solid #eee',
                     height: '152px',
-                    display: 'inline-block'
+                    display: 'inline-block',
                 }}>
                     <EditTools dispatch={this.props.dispatch} ref="editTool"/>
                 </div>
-                <div style={{
+                <div  onMouseEnter={(e)=>{
+                        this.setState({showAddBtn:true})
+                    }} onMouseLeave={(e)=>{
+                        this.setState({showAddBtn:false})
+                    }} style={{
                     display: 'inline-block',
-                    verticalAlign: 'top'
+                    verticalAlign: 'top',
+                    borderLeft: '1px solid rgb(238, 238, 238)',
+                    paddingBottom:'0px'
                 }}>
                     {optionArr}
+                    <div onClick={()=>{
+                            this.addOption(); 
+                        }} className={"componetEditAdd"} style={{visibility:showAddBtn?'visible':'hidden'}}></div>
                 </div>
+                
             </div>
         )
+    }
+
+    addOption(){
+        const {id} = this.props;
+        let data = this.props.data;
+        data.options.push("默认文本");
+        this.props.dispatch(updateQItemData(id,data))
     }
 }

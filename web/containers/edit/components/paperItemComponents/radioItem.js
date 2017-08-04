@@ -19,11 +19,11 @@ export default class RadioItem extends Component{
                 overflow: "hidden",
                 fontSize: "14px"
             }}>
-                <label>
+                <div>
                     <input type="radio" value="value" name="radio" style={{
                         margin:'0 5px'
                     }}/><span><EditableDiv style={style} value={value || "默认文本"}/></span>
-                </label>
+                </div>
             </li> 
         )
     }
