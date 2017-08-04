@@ -5,6 +5,8 @@ import React,{Component,PropTypes} from 'react'
 import PaperItemHead from './paperItemComponents/paperItemHead'
 import Describe from './paperItemComponents/discribe'
 import Choose from './paperItemComponents/choose'
+import FillItem from './paperItemComponents/fillItem'
+import {addNewQuesItem} from '../../../actions/question'
 
 export default class PaperComponent extends Component{
     constructor(){
@@ -39,6 +41,8 @@ export default class PaperComponent extends Component{
                 return <Choose isCheck={true} data={item.data} id={item.id} cid={cid} key={index} dispatch={this.props.dispatch}/>
             } else if(item.type == "3"){
                 return <Choose isCheck={false} data={item.data} id={item.id} cid={cid} key={index} dispatch={this.props.dispatch}/>
+            } else if(item.type == "4"){
+                return <FillItem data={item.data} id={item.id} cid={cid} key={index} dispatch={this.props.dispatch}/>
             }
         })
         return items;
@@ -52,8 +56,10 @@ export default class PaperComponent extends Component{
         return outItems;
     }
     onItemDrop(type){
+        console.log(type);
         let items = this.state.items;
         items.push(type);
         this.setState({items:items});
+        this.props.dispatch(addNewQuesItem(type));
     }
 }

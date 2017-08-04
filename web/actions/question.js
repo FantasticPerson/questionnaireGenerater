@@ -1,6 +1,7 @@
 import * as actionHelper from '../utils/action-helper'
 import * as ActionTypes from '../constants/ActionTypes'
 import {cloneObj} from '../utils/functions'
+import getNewQuesItemData from '../containers/edit/getNewQuesItemData'
 
 export function updateQuestion(data){
     return (dispatch,getState)=>{
@@ -25,10 +26,10 @@ export function updateCid(id){
 }
 
 export function moveQues(qid,dir){
-    if(qid == 1 && dir == 'up'){
-        return;
-    }
     return (dispatch,getState)=>{
+        if(qid == 1 && dir == 'up'){
+            return;
+        }
         let questions = getState().questionnare.question;
         let cid = getState().questionnare.cid;
         let item = questions.find(function(item){
@@ -119,6 +120,20 @@ export function updateQItemData(qid,data){
         let qItem = item.find(function(item1){return item1.id == qid});
         qItem.data = data;
         dispatch(actionHelper.createPayloadAction(ActionTypes.update_question_nare,cloneObj(questions)));
+    }
+}
+
+export function addNewQuesItem(type){
+    return (dispatch,getState)=>{
+        let newItem = getNewQuesItemData(type);
+        if(newItem){
+            let questions = getQuestions(getState);
+            let item = getQesItem(getState,questions);
+            let questionItems = item.questions;
+            newItem.id = questionItems.length+1;
+            questionItems.push(newItem);
+            dispatch(actionHelper.createPayloadAction(ActionTypes.update_question_nare,cloneObj(questions)));
+        }
     }
 }
 

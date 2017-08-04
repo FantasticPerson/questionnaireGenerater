@@ -43,6 +43,15 @@ export const MockQuestions = [
                     questions:[]
                 }
             },
+            {
+                type:'4',
+                id:4,
+                data:{
+                    title:'填空题',
+                    options:[],
+                    questions:[]
+                }
+            }
         ]
     },{
         id:2,
