@@ -39,7 +39,6 @@ export default class ComponentItem extends Component{
         }else if(type === this.types[6]){
             iconClass = "componentItem7";
             name="打分题";
-            display="none"
         }else if(type === this.types[7]){
             iconClass = "componentItem8";
             name="文字投票题";
@@ -51,7 +50,6 @@ export default class ComponentItem extends Component{
         }else if(type === this.types[9]){
             iconClass = "componentItem10";
             name="矩阵选择题";
-            display="none"
         }else if(type === this.types[10]){
             iconClass = "componentItem11";
             name="描述说明";

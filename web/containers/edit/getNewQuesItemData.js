@@ -53,6 +53,33 @@ export default function getQuesItemData(type){
                 questions:[]
             }
         }
+    } else if(type == "componentItem7"){
+        return {
+            type:'6',
+            id:1,
+            data:{
+                title:'打分题',
+                options:[
+                    "打分项一",
+                    "打分项二",
+                    "打分项三"
+                ],
+                questions:[]
+            }
+        }
+    } else if(type == 'componentItem10'){
+        return {
+            type:'7',
+            id:1,
+            data:{
+                title:'表格选择题',
+                options:{
+                    row:['横坐标选项一','横坐标选项二'],
+                    col:['纵坐标选项一','纵坐标选项二']
+                },
+                questions:[]
+            }
+        }
     } else if(type == 'componentItem11'){
         return {
             type:'1',

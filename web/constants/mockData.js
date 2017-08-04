@@ -28,42 +28,6 @@ export const MockQuestions = [
                     ],
                     questions:[]
                 }
-            },
-            {
-                type:'3',
-                id:3,
-                data:{
-                    title:'默认文本',
-                    options:[
-                        "默认文本",
-                        "默认文本",
-                        "默认文本",
-                        "默认文本"
-                    ],
-                    questions:[]
-                }
-            },
-            {
-                type:'4',
-                id:4,
-                data:{
-                    title:'填空题',
-                    options:[],
-                    questions:[]
-                }
-            },
-            {
-                type:'5',
-                id:5,
-                data:{
-                    title:'多项填空题',
-                    options:[
-                        "填空项一",
-                        "填空项二",
-                        "填空项三"
-                    ],
-                    questions:[]
-                }
             }
         ]
     },{
